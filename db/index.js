@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
-const DB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/site_db';
+const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/site_db';
 
 
 
