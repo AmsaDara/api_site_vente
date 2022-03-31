@@ -2,7 +2,7 @@ var jwt = require('jsonwebtoken');
 var secretKey =process.env.SECRET_KEY;
 module.exports = {
     validateUser: async function (req, res, next) {
-        await jwt.verify(req.headers['x-access-token'], secretKey, function (err, user) {
+        await jwt.verify(req.headers['token'], secretKey, function (err, user) {
             if (err) {
                 res.json({
                     status: "error",

@@ -1,7 +1,7 @@
 
 
 
-const addNewArticle = (Article) => async (article) => {
+const addNewArticle = Article => async (article) => {
     const _article = new Article(article);
     try {
       const result = await _article.save();
@@ -23,7 +23,7 @@ const addNewArticle = (Article) => async (article) => {
 
  const getNonFeaturedArticles = (Article)=>async ()=> {
      try {
-        const result = await Article.find({'featured': false});
+        const result = await Article.find();
         if (result) {
           return {
             status: "success",
@@ -42,7 +42,7 @@ const addNewArticle = (Article) => async (article) => {
  
  const getFeaturedArticles = (Article)=>async ()=>{
     try {
-        const result = await Article.find({'featured': true});
+        const result = await Article.find();
         if (result) {
           return {
             status: "success",
@@ -63,7 +63,7 @@ const addNewArticle = (Article) => async (article) => {
     return {
       addNewArticle: addNewArticle(Article),
       getFeaturedArticles: getFeaturedArticles(Article),
-      getNonFeaturedArticles: getNonFeaturedArticles(Article)
+      //getNonFeaturedArticles: getNonFeaturedArticles(Article)
     //   authenticate: authenticate(Article),
     //   getUserById: getUserById(Article),
     //   updateUser: updateUser(Article),

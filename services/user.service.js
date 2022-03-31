@@ -1,7 +1,4 @@
-const {
-    generateMeAToken,
-    comparePassword
-} = require('../helpers/auth.helpers');
+const { generateMeAToken, comparePassword } = require('../helpers/auth.helpers');
 const ROLES = require('../helpers/user.validation').roles;
 
 
